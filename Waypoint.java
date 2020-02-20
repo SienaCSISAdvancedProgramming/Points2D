@@ -35,4 +35,15 @@ public class Waypoint extends Point2D.Double {
 
 	return label + " (" + x + "," + y + ")";
     }
+
+    /**
+       Return a METAL .wpt-format line for this Waypoint 
+
+       @return a METAL .wpt-format line for this Waypoint
+    */
+    public String wptString() {
+
+	return label + "  http://www.openstreetmap.org/?lat=" + x + "&lon=" + y;
+    }
+
 }
