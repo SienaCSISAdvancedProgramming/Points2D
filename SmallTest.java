@@ -5,7 +5,8 @@ public class SmallTest {
     public static void main(String args[]) {
 
 	//Point2DCollection<Point2D.Double> points = new PointsList<Point2D.Double>();
-	Point2DCollection<Point2D.Double> points = new Quadtree<Point2D.Double>(-100, 100, -100, 100, 4);
+	//Point2DCollection<Point2D.Double> points = new Quadtree<Point2D.Double>(-100, 100, -100, 100, 4);
+	Point2DCollection<Point2D.Double> points = new PointsListSorted<Point2D.Double>(PointsListSorted.ORDER_BY_Y);
 	points.add(new Point2D.Double(4.2, 9.1));
 	points.add(new Point2D.Double(-14.0, 39.1));
 	points.add(new Point2D.Double(8.4, 82.4));

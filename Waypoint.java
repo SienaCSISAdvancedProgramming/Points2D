@@ -22,7 +22,7 @@ public class Waypoint extends Point2D.Double {
     */
     public Waypoint(String label, double lat, double lng) {
 
-	super(lat, lng);
+	super(lng, lat);
 	this.label = label;
     }
 
@@ -33,7 +33,7 @@ public class Waypoint extends Point2D.Double {
     */
     public String toString() {
 
-	return label + " (" + x + "," + y + ")";
+	return label + " (" + y + "," + x + ")";
     }
 
     /**
@@ -43,7 +43,7 @@ public class Waypoint extends Point2D.Double {
     */
     public String wptString() {
 
-	return label + "  http://www.openstreetmap.org/?lat=" + x + "&lon=" + y;
+	return label + "  http://www.openstreetmap.org/?lat=" + y + "&lon=" + x;
     }
 
 }

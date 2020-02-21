@@ -26,7 +26,7 @@ public class WaypointTraversal {
 	// first, make sure there's at least one file after the two required
 	// parameters
 	if (args.length < 3) {
-	    System.err.println("Usage: java WaypointTraversal [PointList|Quadtree] outfile infiles");
+	    System.err.println("Usage: java WaypointTraversal [PointsList|Quadtree|ByX|ByY] outfile infiles");
 	    System.exit(1);
 	}
 	Point2DCollection<Waypoint> points = null;
@@ -36,8 +36,14 @@ public class WaypointTraversal {
 	else if (args[0].equalsIgnoreCase("Quadtree")) {
 	    points = new Quadtree<Waypoint>(-180, 180, -90, 90, 5);
 	}
+	else if (args[0].equalsIgnoreCase("ByX")) {
+	    points = new PointsListSorted<Waypoint>(PointsListSorted.ORDER_BY_X);
+	}
+	else if (args[0].equalsIgnoreCase("ByY")) {
+	    points = new PointsListSorted<Waypoint>(PointsListSorted.ORDER_BY_Y);
+	}
 	else {
-	    System.err.println("Usage: java WaypointTraversal [PointList|Quadtree] outfile infiles");
+	    System.err.println("Usage: java WaypointTraversal [PointsList|Quadtree|ByX|ByY] outfile infiles");
 	    System.exit(1);
 	}
 
